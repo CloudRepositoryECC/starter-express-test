@@ -1,16 +1,8 @@
-const Express = require("express");
-const App = Express();
+const express = require("express");
+const app = express();
 
-App.use(Express.urlencoded({ extended: false }));
-App.use(Express.static("public"));
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-const PORT = process.env.PORT || 6500;
-const HOST = "0.0.0.0";
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
-App.listen(PORT, HOST, () => console.log(`Server is running in port : ${PORT}`));
-
-App.get("/", async (req, res, next) => {
-    res.send({
-        message: "test here message"
-    })
-})
+module.exports = app
