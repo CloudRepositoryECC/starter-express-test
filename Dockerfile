@@ -8,10 +8,6 @@ RUN npm install -g npm@latest && \
     npm install && \
     npm cache clean --force
 
-# Install dependensi menggunakan npm
-RUN npm install -g npm@latest
-RUN npm install
-
 # Salin sisa kode aplikasi
 ENV APP_VERSION=API_VERSION
 
